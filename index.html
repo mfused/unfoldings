@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>three.js webgl - dynamic procedural terrain</title>
+		<title>Greed</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style type="text/css">
@@ -16,8 +16,6 @@
 				text-align: center;
 			}
 
-			#info { position: absolute; top: 10px; width: 100%; }
-
 			a { color: #fb0; }
 
 			#footer { position: absolute; bottom: 40px; width: 100%; }
@@ -31,20 +29,13 @@
 		<div id="container"></div>
 
 
-
 		<div id="footer">
 			<div class="c">
 			animate terrain: <span class="h">m</span>
-			</div>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-						rendered by <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a>  using
+			</div> &nbsp;&nbsp;&nbsp;&nbsp; rendered by <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a>  using
 						<a href="https://github.com/ashima/webgl-noise" target="_blank" rel="noopener">simplex noise</a><br/>
 
 			</div>
-
-
 
 
 		<script src="build/three.js"></script>
@@ -190,6 +181,7 @@
 
 		</script>
 
+
 		<script id="vertexShader" type="x-shader/x-vertex">
 
 			varying vec2 vUv;
@@ -270,17 +262,18 @@
 				controls.target.set( 0, 0, 0 );
 
 				controls.enableRotate = true;
+				//adding a bit of heaviness here (heft)
 				controls.rotateSpeed = 0.05;
 				controls.minAzimuthAngle = - Math.PI; // default
-				controls.maxAzimuthAngle = Math.PI / 2; // default
+				controls.maxAzimuthAngle = Math.PI / 2;
 
 				controls.minPolarAngle = 0; // default
-				controls.maxPolarAngle = Math.PI / 3; // default
+				controls.maxPolarAngle = Math.PI / 3;
 
-				controls.zoomSpeed = 0.6;
+        //and a bit of heaviness here
+				controls.zoomSpeed = 0.05;
 
-        //adding heaviness here (heft)
-				controls.panSpeed = 0.05;
+				controls.panSpeed = 0.5;
 
 				controls.enableKeys= true;
 				controls.keys = [ 37, 38, 39 ];
@@ -442,13 +435,13 @@
 				if (seed && page) {
 					for (var i = 1; i <= page - 1; i++) {
 						// every time this is called, it hits our random number generator inside the getRandomInt function
-						getRandomInt(100, 1000);
+						getRandomInt(50, 500);
 
 					    //console.log(getRandomInt(100, 1000));
 
 					}
 					// will take screenshot between frame 100 and 1000
-					screenshotFrame = getRandomInt(100, 1000);
+					screenshotFrame = getRandomInt(50, 500);
 				}
 
 			}
@@ -503,7 +496,7 @@
 			    // set camera and renderer to desired screenshot dimension
 			    camera.aspect = width / height;
 			    camera.updateProjectionMatrix();
-			    // renderer.setSize(  4824, 3074 );
+			    // renderer.setSize(  width, height );
 				renderer.setSize(  2412, 3074 );
 
 

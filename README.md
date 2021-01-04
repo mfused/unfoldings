@@ -10,4 +10,4 @@ and
 
 http://www.myjscode.com/threejs/examples/#webgl_geometry_terrain_fog
 
-(old version)
+

@@ -340,10 +340,10 @@
 				var specularMap = new THREE.WebGLRenderTarget( 1024, 1024, pars );
 				specularMap.texture.generateMipmaps = false;
 
-				var diffuseTexture1 = textureLoader.load( "./textures/difTex001.png" );
-				var diffuseTexture2 = textureLoader.load( "./textures/difTex002.png" );
-				//on purpose here
-				var detailTexture = textureLoader.load( "textures/consenttocollectmydata.png" );
+				var diffuseTexture1 = textureLoader.load( "textures/difTex001.png" );
+				var diffuseTexture2 = textureLoader.load( "textures/difTex002.png" );
+				//missing on purpose here
+				var detailTexture = textureLoader.load( "textures/detTexa.png" );
 
 				diffuseTexture1.wrapS = diffuseTexture1.wrapT = THREE.RepeatWrapping;
 				diffuseTexture2.wrapS = diffuseTexture2.wrapT = THREE.RepeatWrapping;

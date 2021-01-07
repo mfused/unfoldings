@@ -207,6 +207,9 @@
 			var SCREEN_WIDTH = window.innerWidth;
 			var SCREEN_HEIGHT = window.innerHeight;
 
+			const PAGE_WIDTH = 2412;
+			const PAGE_HEIGHT = 3074;
+
 			var renderer, container, stats;
 
 			var camera, scene, controls;
@@ -499,9 +502,7 @@
 			    // set camera and renderer to desired screenshot dimension
 			    camera.aspect = width / height;
 			    camera.updateProjectionMatrix();
-			    // renderer.setSize(  width, height );
-				renderer.setSize(  2412, 3074 );
-
+			    renderer.setSize(  width, height );
 
 			    renderer.render( scene, camera, null, false );
 
@@ -558,7 +559,7 @@
 			function animate(){
 
 			if (screenshotFrame !== undefined && frame === screenshotFrame) {
-				takeScreenshot( SCREEN_WIDTH, SCREEN_HEIGHT, seed, page);
+				takeScreenshot( PAGE_WIDTH, PAGE_HEIGHT, seed, page);
 				requestAnimationFrame( animate );
 				render();
 			} else {
